@@ -1,0 +1,24 @@
+:root {
+    --teal: #1192AF;
+    --orange: #FEA331;
+    --cyan: #62FBF9;
+    --white: #FFFFFF;
+    --teal-dark: #0d6e84;
+    --orange-dark: #e08b22;
+    --text-dark: #0B252C;
+    --text-muted: #4A676E;
+    --bg-main: #FAFCFC;
+    --bg-card: #FFFFFF;
+    --border-light: #E1ECEE;
+    
+    --shadow-sm: 0 4px 6px rgba(11, 37, 44, 0.04);
+    --shadow-md: 0 12px 32px rgba(11, 37, 44, 0.08);
+    --shadow-hover: 0 20px 40px rgba(17, 146, 175, 0.12);
+}
+
+body {
+    background-image: url('../images/pexels-maxmishin-11576307.jpg');
+    background-size: cover;
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+}
