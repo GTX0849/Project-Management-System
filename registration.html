@@ -8,6 +8,33 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        teal: 'var(--teal)',
+                        orange: 'var(--orange)',
+                        cyan: 'var(--cyan)',
+                        white: 'var(--white)',
+                        tealDark: 'var(--teal-dark)',
+                        orangeDark: 'var(--orange-dark)',
+                        textDark: 'var(--text-dark)',
+                        textMuted: 'var(--text-muted)',
+                        bgMain: 'var(--bg-main)',
+                        bgCard: 'var(--bg-card)',
+                        borderLight: 'var(--border-light)'
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    boxShadow: {
+                        sm: 'var(--shadow-sm)',
+                        md: 'var(--shadow-md)',
+                        hover: 'var(--shadow-hover)',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 <body class="font-sans antialiased min-h-screen p-4 md:p-8 flex flex-col items-center justify-center">
 

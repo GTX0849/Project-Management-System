@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const path = require('path');
+const Employee = require('./model/employee.model')
 
 const app = express();
 app.use(cors());
@@ -18,15 +19,6 @@ app.get('/', (req, res) => {
 mongoose.connect('mongodb://127.0.0.1:27017/workspaceDB')
     .then(() => console.log('Connected to MongoDB'))
     .catch((err) => console.error('MongoDB connection error:', err));
-
-const employeeSchema = new mongoose.Schema({
-    fullName: { type: String, required: true },
-    email: { type: String, required: true, unique: true },
-    role: { type: String, required: true },
-    joinDate: { type: Date, required: true }
-});
-
-const Employee = mongoose.model('Employee', employeeSchema);
 
 app.get('/api/employees', async (req, res) => {
     try {
