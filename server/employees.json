@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "id": 1786191754702,
+    "name": "admin",
+    "email": "anandsuresh2004@gmail.com",
+    "post": "SDE1",
+    "salary": "155000"
+  },
+  {
+    "id": 1786191874931,
+    "name": "Gokul",
+    "email": "gokulta2002@gmail.com",
+    "post": "SDE2",
+    "salary": "120000"
+  }
+]
