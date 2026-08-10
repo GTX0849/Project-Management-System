@@ -33,7 +33,7 @@ function App() {
 
   const updateEmployee = async (updatedEmployee) => {
     try {
-      await axios.put(`${API_URL}/${updatedEmployee.id}`, updatedEmployee);
+      await axios.put(`${API_URL}/${updatedEmployee._id}`, updatedEmployee);
       fetchEmployees();
       setEditingEmployee(null);
       alert("Employee updated successfully");
@@ -45,7 +45,7 @@ function App() {
   const deleteEmployee = async (emp) => {
     if (!window.confirm("Are you sure you want to delete this employee?")) return;
     try {
-      await axios.delete(`${API_URL}/${emp.id}`);
+      await axios.delete(`${API_URL}/${emp._id}`);
       fetchEmployees();
       alert("Employee deleted successfully");
     } catch (error) {
@@ -77,6 +77,7 @@ function App() {
               <thead className='bg-gray-50'>
                 <tr>
                   <th className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Name</th>
+                  <th className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Email</th>
                   <th className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Post</th>
                   <th className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Salary</th>
                 </tr>
@@ -90,6 +91,9 @@ function App() {
                         <button className='px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all' onClick={() => editEmployee(emp)}>Edit</button>
                         <button className='px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition-all' onClick={() => deleteEmployee(emp)}>Delete</button>
                       </div>
+                    </td>
+                    <td className='px-6 py-4 whitespace-nowrap'>
+                      <div className='text-sm text-gray-900'>{emp.email}</div>
                     </td>
                     <td className='px-6 py-4 whitespace-nowrap'>
                       <div className='text-sm text-gray-900'>{emp.post}</div>

@@ -4,6 +4,7 @@ import axios from 'axios';
 const EmployeeForm = ({ addEmployee, updateEmployee, editingEmployee, setEditingEmployee }) => {
   const [employee, setEmployee] = useState({
     name: '',
+    email: '',
     post: '',
     salary: 0
   });
@@ -12,7 +13,7 @@ const EmployeeForm = ({ addEmployee, updateEmployee, editingEmployee, setEditing
     if (editingEmployee) {
       setEmployee(editingEmployee);
     } else {
-      setEmployee({ name: '', post: '', salary: 0 });
+      setEmployee({ name: '', email: '', post: '', salary: 0 });
     }
   }, [editingEmployee]);
 
@@ -24,7 +25,7 @@ const EmployeeForm = ({ addEmployee, updateEmployee, editingEmployee, setEditing
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!employee.name || !employee.post || !employee.salary) {
+    if (!employee.name || !employee.email || !employee.post || !employee.salary) {
       alert('All fields are required.');
       return;
     }
@@ -37,13 +38,14 @@ const EmployeeForm = ({ addEmployee, updateEmployee, editingEmployee, setEditing
 
     setEmployee({
       name: '',
+      email: '',
       post: '',
       salary: 0
     })
   }
   const handleCancel = () => {
     setEditingEmployee(null);
-    setEmployee({ name: '', post: '', salary: 0 });
+    setEmployee({ name: '', email: '', post: '', salary: 0 });
   }
 
   return (
@@ -63,6 +65,18 @@ const EmployeeForm = ({ addEmployee, updateEmployee, editingEmployee, setEditing
             onChange={handleChange}
             className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
             placeholder="e.g. John Doe"
+          />
+        </div>
+        <div className="flex flex-col">
+          <label htmlFor="email" className="mb-1 text-sm font-medium text-gray-600">Email</label>
+          <input
+            type="email"
+            name='email'
+            id='email'
+            value={employee.email}
+            onChange={handleChange}
+            className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+            placeholder="e.g. john@example.com"
           />
         </div>
         <div className="flex flex-col">
